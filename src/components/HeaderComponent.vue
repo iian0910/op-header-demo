@@ -15,7 +15,7 @@
       </div>
     </template>
     <template v-if="props.titleType">
-      <div style="margin: 0 auto">
+      <div class="title">
         {{ props.titleText }}
       </div>
     </template>
@@ -106,6 +106,9 @@ const walletEvent = () => {
   display: block;
   width: 180px;
   margin: 0 auto;
+}
+.title {
+  text-align: center;
 }
 .icon {
   display: block;
