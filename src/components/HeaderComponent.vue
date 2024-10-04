@@ -9,12 +9,16 @@
         @click="backEvent"
       />
     </div>
-    <div>
-      <div v-if="props.logoType">
+    <template v-if="props.logoType">
+      <div>
         <img class="logo" src="../assets/openwallet.png">
       </div>
-      <div v-if="props.titleType">{{ props.titleText }}</div>
-    </div>
+    </template>
+    <template v-if="props.titleType">
+      <div style="margin: 0 auto">
+        {{ props.titleText }}
+      </div>
+    </template>
     <div class="right_icon">
       <img
         v-if="scanControl"
@@ -83,19 +87,25 @@ const walletEvent = () => {
 .header {
   padding: 10px 20px;
   border: 1px solid black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: relative;
 }
 .left_icon {
-  width: 20px;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
 }
 .right_icon {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
   display: flex;
 }
 .logo {
   display: block;
   width: 180px;
+  margin: 0 auto;
 }
 .icon {
   display: block;
